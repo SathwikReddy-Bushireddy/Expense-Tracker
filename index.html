@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Expense Tracker</title>
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
     <header>
         <h1>Expense Tracker</h1>
     </header>
 
-    <section>
+    <section class="addExpense">
         <h2>Add Expense</h2>
         <form>
             <label for="description">Description:</label>
@@ -33,6 +34,7 @@
             <button type="submit">Add Expense</button>
         </form>
     </section>
+    <section class="expenseList">
         <h2>Expenses List</h2>
         <table border="1">
             <tr>
@@ -40,13 +42,19 @@
                 <th>Category</th>
                 <th>Amount</th>
                 <th>Date</th>
+                <th>Actions</th>
             </tr>
 
             <tr>
                 <!--Dynamically given-->
+                <td>Sample Data</td>
+                <td>Food</td>
+                <td>1234.00</td>
+                <td>07/03/2026</td>
                 <td><button>Delete</button></td>
             </tr>
         </table>
+    </section>
     <section>
         <h2>Expense Summary</h2>
         <p>Total summary: ₹0.00</p>
@@ -69,5 +77,9 @@
         <h2>Reset Expenses</h2>
         <button>Reset all Expenses</button>
     </section>
+
+    <footer>
+        <p>&copy; Expense Tracker</p>
+    </footer>
 </body>
 </html>
