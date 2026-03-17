@@ -44,6 +44,7 @@ function renderExpenses(){
         
     }));
     updateTotal();
+    updateCategorySummary();
 }
 
 function deleteExpense(id){
@@ -54,4 +55,29 @@ function deleteExpense(id){
 function updateTotal(){
     const total = expenses.reduce((sum,exp)=>sum+exp.amount,0);
     document.querySelector(".total").textContent=total;
+}
+
+function updateCategorySummary(){
+    const categoryMap = {};
+    expenses.forEach(exp=>{
+        if(categoryMap[exp.category]){
+            categoryMap[exp.category] += exp.amount;
+        }
+        else{
+            categoryMap[exp.category] = exp.amount;
+        }
+
+    });
+
+    const tbody = document.getElementById("categoryBody");
+    tbody.innerHTML="";
+
+    for(let category in  categoryMap){
+        const row = document.createElement("tr");
+        row.innerHTML=`
+                    <td>${category}</td>
+                    <td>₹${categoryMap[category]}</td>
+                `;
+        tbody.appendChild(row);
+    }
 }
