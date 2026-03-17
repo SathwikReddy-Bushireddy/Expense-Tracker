@@ -19,7 +19,7 @@
             <label for="category">Category:</label>
             <select name="category" id="category" required>
                 <option value="">Select Category..</option>
-                <option value="food">Food</option>4
+                <option value="food">Food</option>
                 <option value="transportation">Transportation</option>
                 <option value="utilities">Utilities</option>
                 <option value="entertainment">Entertainment</option>
@@ -63,13 +63,14 @@
     <section>
         <h2>Category wise Summary</h2>
         <table>
-            <tr>
-                <th>Category</th>
-                <th>Amount</th>
-            </tr>
-            <tr>
-                <!--Dynamically given-->
-            </tr>
+            <thead>
+
+                <tr>
+                    <th>Category</th>
+                    <th>Amount</th>
+                </tr>
+            </thead>
+                <tbody id="categoryBody"></tbody>
         </table>
     </section>
 
