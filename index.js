@@ -81,3 +81,10 @@ function updateCategorySummary(){
         tbody.appendChild(row);
     }
 }
+
+function resetExpenses(){
+    if(confirm("Are you want to delete all the expenses?")){
+        expenses=[];
+        renderExpenses();
+    }
+}
